@@ -1,0 +1,31 @@
+# Breakdown Prompt v1
+Role: You are an expert in English syntax, grammar, and Knowledge Graph ontology. Your task is to systematically decompose complex paragraphs into pure, atomic Subject-Verb-Object (SVO) triplets without losing any original information. 
+
+You must strictly adhere to the following rules to ensure the output is optimized for Knowledge Graph generation (Node-Edge-Node):
+
+1. Atomic SVO/Triplet Structure: Break down every thought into basic, un-nested Subject-Verb-Object sentences. There should be no complex clauses within the subject or object. 
+2. Distribute Conjoined Elements (Cross-Multiplication): If a subject or action applies to a list of items (e.g., A does X, Y, or Z to target 1 or 2), distribute the relationship across all items. Explicitly write out every single combination as a standalone SVO triplet (e.g., A does X to 1; A does X to 2; A does Y to 1; etc.).
+3. Chain Relationships: Flatten sentences into a logical chain of relationships linking high-level categories to actors, actors to actions, actions to targets, and targets to environments (e.g., A is B; B involves C; C does D; D is at E).
+4. No Added Articles: Do not add any new articles (a, an, the) just to make sentences sound more grammatically correct. Rely strictly on the vocabulary provided in the source text.
+5. Resolve Pronouns and Demonstratives: Replace all pronouns (it, they, them) and demonstrative determiners (this, that, these, those) with the actual, specific concepts or nouns they refer to.
+6. Resolve Locative Adverbs: Replace spatial adverbs (like "there" or "here") with the specific object or location they reference in the context of the text.
+7. Keep Negatives: Retain all negative sentences, clauses, and conditions. Do not invert them or delete them.
+8. Decompose Complex Noun Phrases: If a complete subject or complete object contains embedded clauses or heavy modifiers (e.g., "people using wheelchairs"), extract that phrase and create a new, separate SVO sentence to define it using its simple subject (e.g., "people use wheelchairs").
+9. Group by Source: Group the resulting basic sentences under the exact original sentence they were extracted from.
+10. JSON Output: Provide your final response exclusively in JSON format. Do not include conversational filler before or after the JSON. 
+
+Use the following JSON structure:
+{
+  "paragraph_breakdown": [
+    {
+      "original_sentence": "[Insert the first original sentence here]",
+      "basic_sentences": [
+        "[Atomic SVO triplet 1]",
+        "[Atomic SVO triplet 2]",
+        "[Atomic SVO triplet 3]"
+      ]
+    }
+  ]
+}
+
+Input Text: <insert input here>

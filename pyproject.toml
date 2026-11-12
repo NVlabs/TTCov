@@ -1,0 +1,52 @@
+[project]
+name = "ttcov"
+version = "1.0.0"
+description = "TTCov: coverage-driven training-data selection via atomic-proposition atlases"
+# Single supported Python version: the Physical AI AV SDK needs >=3.11, and
+# pinning one minor version keeps the lockfile and environments uniform.
+requires-python = ">=3.12,<3.13"
+# Everything the ten pipeline stages need. The LLM stages (1-5, 9) are pure
+# CPU/API work; the embedding stages (6-8) use torch/sentence-transformers/
+# faiss (GPU strongly recommended); stage 10's lp_round/mip/lns optimizers
+# use highspy. All of it is core so a single `uv sync` prepares any worker
+# for any stage.
+dependencies = [
+    "dill>=0.3.8",
+    "faiss-cpu>=1.8",
+    "highspy>=1.7",
+    "httpx>=0.27",
+    "numpy>=1.23",
+    "openai>=1.0,<2.3",
+    "opencv-python-headless>=4.8",
+    "pyarrow>=14.0",
+    "scipy>=1.10",
+    "sentence-transformers>=5.1.0,<5.2",
+    "torch>=2.7",
+    "tqdm>=4.66",
+    "transformers>=4.52",
+]
+
+[project.optional-dependencies]
+# Captioning input via NVIDIA's Physical AI AV dataset SDK — the one
+# dataset-specific dependency, needed only for --data-format physical-ai.
+physical-ai = [
+    "physical_ai_av>=0.2.2",
+]
+
+[tool.uv]
+package = false
+
+# torch's default PyPI wheels track the newest CUDA major (cu13x as of torch
+# 2.13) and require a matching CUDA 13 driver. Many GPU clusters still run
+# CUDA 12.x drivers, so on Linux torch is resolved from the PyTorch cu126
+# wheel index instead: cu12x runtimes work on any CUDA 12.x driver and on
+# newer drivers. Other platforms fall back to PyPI.
+[tool.uv.sources]
+torch = [
+    { index = "pytorch-cu126", marker = "sys_platform == 'linux'" },
+]
+
+[[tool.uv.index]]
+name = "pytorch-cu126"
+url = "https://download.pytorch.org/whl/cu126"
+explicit = true

@@ -1,0 +1,16 @@
+You are a driving instructor. Your student is the driver of this video. The video is presented by the provided sequence of images. The video might include discontinuities, sudden changes in the driving environment.
+Please pay attention to what action your student is taking and explain why.  Please pay special attention to if the car is reacting to a traffic light intersection, or making a lane change, or keeping distance from the pedestrian/vehicle ahead, or avoiding some objects/cars on the road, or yielding or nudging to other objects/cars, or at a fork split/merge.  If the car is at a traffic light intersection, please describe the traffic light color and shape and the car's action. Describe it if objects are partially occluded by others. 
+
+Exclude the following in your output:
+- UNRELATED objects
+- Background buildings
+- Hypothetical scenarios or actions
+- Street/business names
+- Vehicle makes/models
+
+Use 'the ego car' to refer to your student in your answer.
+Make sure your answers have considered everything throughout the entirety of the video. 
+Do not mention anything that you are certain does not exist (no 'there is/are no')! No statements about uncertain objects or events (no 'maybe' or 'might' or 'possibly'). 
+All responses must be in English only!
+
+Format your answers into Overall Scene Description, Key Driving Actions, Relevant Road Users and Objects, Overall Assessment.

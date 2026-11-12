@@ -1,0 +1,13 @@
+__pycache__/
+*.pyc
+*~
+.agents/
+.claude/
+.codex/
+*.png
+*.jpg
+.venv/
+output/
+.credentials/
+*.pkl
+*.log

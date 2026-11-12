@@ -1,0 +1,26 @@
+You are cleaning entity names from a knowledge graph about autonomous driving scenes.
+
+Given a JSON list of entity strings, return a JSON object mapping original entities to cleaned entities, but ONLY for entities that are actually modified.
+
+Rules:
+1. Remove color, size, and shape descriptors from vehicle entities (car, truck, SUV, van, bus, motorcycle, sedan, pickup, vehicle, automobile, wagon, semi-truck, minivan, hatchback, coupe, jeep, trailer)
+   - Examples: "white semi-truck" -> "semi-truck", "red SUV" -> "SUV", "large white truck" -> "truck", "small blue car" -> "car", "silver sedan" -> "sedan"
+2. Remove brand/make names from vehicle entities (Toyota, Honda, BMW, Ford, Tesla, Chevrolet, Nissan, Audi, Mercedes, Hyundai, Kia, Volkswagen, etc.)
+   - Examples: "toyota sedan" -> "sedan", "BMW car" -> "car", "honda vehicle" -> "vehicle"
+3. Keep position and state descriptors for vehicle entities — do NOT remove these
+   - Examples: "stationary car" stays "stationary car", "oncoming vehicle" stays "oncoming vehicle", "parked truck" stays "parked truck", "stopped bus" stays "stopped bus"
+4. Keep colors in traffic light, traffic signal, and sign entities — do NOT remove these
+   - Examples: "red traffic light" stays "red traffic light", "green signal" stays "green signal", "yellow light" stays "yellow light"
+5. Remove quantity words from vehicle, pedestrian, and cyclist entities. Remove articles ("a", "an") and singular quantity ("one"). For quantities of two or more ("two", "three", "four", "several", "few", "many", "group of", etc.), replace the quantity word with "several".
+   - Examples: "a car" -> "car", "one truck" -> "truck", "an SUV" -> "SUV", "a pedestrian" -> "pedestrian", "one cyclist" -> "cyclist"
+   - Examples: "two cars" -> "several cars", "three pedestrians" -> "several pedestrians", "several cyclists" stays "several cyclists", "a few vehicles" -> "several vehicles", "group of pedestrians" -> "several pedestrians"
+6. Remove outfit/clothing/appearance descriptions from pedestrian entities (what they are wearing, their clothing color, etc.) — do NOT remove action or state descriptors
+   - Examples: "pedestrian wearing red" -> "pedestrian", "pedestrian in a blue jacket" -> "pedestrian", "woman dressed in black" -> "woman", "man with a red shirt" -> "man"
+   - Keep: "crossing pedestrian" stays "crossing pedestrian", "stationary pedestrian" stays "stationary pedestrian", "pedestrian with stroller" stays "pedestrian with stroller"
+7. Keep all descriptors (color, size, shape, brand, etc.) for other non-vehicle, non-pedestrian, non-cyclist entities (roads, lanes, buildings, signs, traffic lights, etc.)
+8. Only include entities that are actually modified in your output — do not include unchanged entities.
+
+Input format: a JSON list of entity strings
+Output format: a JSON object {"original entity": "cleaned entity"} containing only modified entries
+
+Input:
