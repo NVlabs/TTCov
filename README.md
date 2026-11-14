@@ -1,5 +1,8 @@
 # TTCov
 
+[Project page](https://research.nvidia.com/labs/sil/projects/ttcov/site/) ·
+[Citation](#citation)
+
 TTCov is a coverage-driven pipeline for **selecting training data** so that
 the selected subset matches the concept distribution of a target (test)
 domain. Each item is described in natural language and reduced to **atomic
@@ -250,6 +253,48 @@ python scripts/data_interfaces/navsim_generate_train_configs.py \
 
 See `scripts/data_interfaces/README.md` for the id-to-config contract and each
 dataset's specifics.
+
+## Citation
+
+If you find this work useful, please cite our papers:
+
+### TTCov: Deployment-conditioned data selection · [arXiv](https://arxiv.org/abs/2607.22697)
+
+```bibtex
+@misc{chang2026testtimecoverage,
+  title = {Test-Time Coverage: Test-Conditioned Data Curation for Deployment-Aware Learning},
+  author = {Nadine Chang and Maying Shen and Shizhe Diao and Jialiang Wang and Jingde Chen and Thomas Breuel and Pavlo Molchanov and Rafid Mahmood and Jose M. Alvarez},
+  year = {2026},
+  eprint = {2607.22697},
+  archivePrefix = {arXiv},
+  primaryClass = {cs.AI},
+  doi = {10.48550/arXiv.2607.22697},
+  url = {https://arxiv.org/abs/2607.22697}
+}
+```
+
+### Atomic propositions: Extraction and semantic canonicalization · [arXiv](https://arxiv.org/abs/2607.16560)
+
+```bibtex
+@misc{chang2026modalitiespropositions,
+  title = {From Modalities to Propositions: A Language-Centric Framework for Multimodal Intelligence},
+  author = {Nadine Chang and Maying Shen and Shizhe Diao and Jialiang Wang and Jingde Chen and Thomas Breuel and Pavlo Molchanov and Rafid Mahmood and Jose M. Alvarez},
+  year = {2026},
+  eprint = {2607.16560},
+  archivePrefix = {arXiv},
+  primaryClass = {cs.AI},
+  doi = {10.48550/arXiv.2607.16560},
+  url = {https://arxiv.org/abs/2607.16560}
+}
+```
+
+## References and acknowledgments
+
+- [Gemini 2.5](https://arxiv.org/abs/2507.06261): captioning and language-model processing in our experiments.
+- [Qwen3 Embedding](https://arxiv.org/abs/2506.05176): proposition embeddings.
+- [FAISS](https://github.com/facebookresearch/faiss): similarity search and proposition matching.
+- [OpenScene](https://github.com/OpenDriveLab/OpenScene) and [NAVSIM / NavHard](https://github.com/autonomousvision/navsim): driving data and evaluation.
+- [Physical AI AV](https://github.com/NVlabs/physical_ai_av): supported driving dataset and SDK.
 
 ## Contributing
 
