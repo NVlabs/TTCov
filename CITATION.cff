@@ -1,0 +1,77 @@
+cff-version: 1.2.0
+message: Please cite the relevant paper(s) for the components you use. The README Citation
+  section provides BibTeX for both TTCov and the atomic-propositions paper.
+type: software
+title: TTCov
+authors:
+- family-names: Chang
+  given-names: Nadine
+- family-names: Shen
+  given-names: Maying
+- family-names: Diao
+  given-names: Shizhe
+- family-names: Wang
+  given-names: Jialiang
+- family-names: Chen
+  given-names: Jingde
+- family-names: Breuel
+  given-names: Thomas
+- family-names: Molchanov
+  given-names: Pavlo
+- family-names: Mahmood
+  given-names: Rafid
+- family-names: Alvarez
+  given-names: Jose M.
+repository-code: https://github.com/NVlabs/TTCov
+url: https://research.nvidia.com/labs/sil/projects/ttcov/site/
+license: Apache-2.0
+preferred-citation:
+  type: generic
+  title: 'Test-Time Coverage: Test-Conditioned Data Curation for Deployment-Aware Learning'
+  authors:
+  - family-names: Chang
+    given-names: Nadine
+  - family-names: Shen
+    given-names: Maying
+  - family-names: Diao
+    given-names: Shizhe
+  - family-names: Wang
+    given-names: Jialiang
+  - family-names: Chen
+    given-names: Jingde
+  - family-names: Breuel
+    given-names: Thomas
+  - family-names: Molchanov
+    given-names: Pavlo
+  - family-names: Mahmood
+    given-names: Rafid
+  - family-names: Alvarez
+    given-names: Jose M.
+  year: 2026
+  doi: 10.48550/arXiv.2607.22697
+  url: https://arxiv.org/abs/2607.22697
+references:
+- type: generic
+  title: 'From Modalities to Propositions: A Language-Centric Framework for Multimodal Intelligence'
+  authors:
+  - family-names: Chang
+    given-names: Nadine
+  - family-names: Shen
+    given-names: Maying
+  - family-names: Diao
+    given-names: Shizhe
+  - family-names: Wang
+    given-names: Jialiang
+  - family-names: Chen
+    given-names: Jingde
+  - family-names: Breuel
+    given-names: Thomas
+  - family-names: Molchanov
+    given-names: Pavlo
+  - family-names: Mahmood
+    given-names: Rafid
+  - family-names: Alvarez
+    given-names: Jose M.
+  year: 2026
+  doi: 10.48550/arXiv.2607.16560
+  url: https://arxiv.org/abs/2607.16560
