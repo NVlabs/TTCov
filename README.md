@@ -1,8 +1,6 @@
 # TTCov
 
 [Project page](https://research.nvidia.com/labs/sil/projects/ttcov/site/) ·
-[TTCov paper](https://arxiv.org/abs/2607.22697) ·
-[Atomic propositions paper](https://arxiv.org/abs/2607.16560) ·
 [Citation](#citation)
 
 TTCov is a coverage-driven pipeline for **selecting training data** so that
