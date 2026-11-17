@@ -20,10 +20,10 @@ dependencies = [
     "opencv-python-headless>=4.8",
     "pyarrow>=14.0",
     "scipy>=1.10",
-    "sentence-transformers>=5.1.0,<5.2",
+    "sentence-transformers>=6.3.0,<7",
     "torch>=2.7",
     "tqdm>=4.66",
-    "transformers>=4.52",
+    "transformers>=5.23.0,<6",
 ]
 
 [project.optional-dependencies]
@@ -34,6 +34,14 @@ physical-ai = [
 ]
 
 [tool.uv]
+# Security floors also apply if a transitive package is reintroduced.
+constraint-dependencies = [
+    "pillow>=13.0.0",
+    "filelock>=4.2.10",
+    "urllib3>=2.8.0",
+    "certifi>=2026.10.23",
+    "setuptools>=84.2.1",
+]
 package = false
 
 # torch's default PyPI wheels track the newest CUDA major (cu13x as of torch

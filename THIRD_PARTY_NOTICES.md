@@ -29,10 +29,10 @@ Resolved versions are pinned in `uv.lock`; the constraints below are from
 | opencv-python-headless | >=4.8 | Apache-2.0 (OpenCV); MIT packaging | https://pypi.org/project/opencv-python-headless/ |
 | pyarrow | >=14.0 | Apache-2.0 | https://pypi.org/project/pyarrow/ |
 | scipy | >=1.10 | BSD-3-Clause | https://pypi.org/project/scipy/ |
-| sentence-transformers | >=5.1.0,<5.2 | Apache-2.0 | https://pypi.org/project/sentence-transformers/ |
+| sentence-transformers | >=6.3.0,<7 | Apache-2.0 | https://pypi.org/project/sentence-transformers/ |
 | torch | >=2.7 | BSD-3-Clause | https://pypi.org/project/torch/ |
 | tqdm | >=4.66 | MPL-2.0 AND MIT | https://pypi.org/project/tqdm/ |
-| transformers | >=4.52 | Apache-2.0 | https://pypi.org/project/transformers/ |
+| transformers | >=5.23.0,<6 | Apache-2.0 | https://pypi.org/project/transformers/ |
 
 `torch` is resolved on Linux from the PyTorch CUDA 12.6 wheel index
 (`https://download.pytorch.org/whl/cu126`); see `pyproject.toml`. Its wheels

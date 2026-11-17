@@ -71,6 +71,17 @@ uv sync
 uv sync --extra physical-ai # if using NVIDIA Physical AI AV input
 ```
 
+The embedding stack uses Sentence Transformers 6 and Transformers 5. Loading
+custom Python modules from model directories is disabled. Standard models such
+as Qwen3 embeddings remain supported; custom-code model bundles must be
+converted to supported built-in modules rather than enabling code execution.
+
+Run the offline embedding regression checks after installing dependencies:
+
+```bash
+HF_HUB_OFFLINE=1 TRANSFORMERS_OFFLINE=1 python -m unittest discover -s tests -v
+```
+
 On Linux, `torch` resolves from the PyTorch cu126 wheel index (works on
 CUDA 12.x and newer drivers; see `[tool.uv.sources]` in `pyproject.toml`).
 With plain pip, mirror it:

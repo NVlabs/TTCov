@@ -92,7 +92,7 @@ def load_sentence_transformer(model_name: str):
             "(a core dependency).\n"
             "Install the project dependencies: uv sync"
         ) from exc
-    return SentenceTransformer(model_name)
+    return SentenceTransformer(model_name, trust_remote_code=False)
 
 
 def ensure_embeddings(
