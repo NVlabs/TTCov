@@ -23,7 +23,7 @@ authors:
 - family-names: Alvarez
   given-names: Jose M.
 repository-code: https://github.com/NVlabs/TTCov
-url: https://research.nvidia.com/labs/sil/projects/ttcov/site/
+url: https://research.nvidia.com/labs/av-applied-research/projects/ttcov/site/
 license: Apache-2.0
 preferred-citation:
   type: generic

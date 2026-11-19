@@ -1,7 +1,9 @@
 # TTCov
 
-[Project page](https://research.nvidia.com/labs/sil/projects/ttcov/site/) ·
-[Citation](#citation)
+[Project page](https://research.nvidia.com/labs/av-applied-research/projects/ttcov/site/) ·
+[Citation](#citation) ·
+[TTCov paper](https://arxiv.org/abs/2607.22697) ·
+[Atomic propositions paper](https://arxiv.org/abs/2607.16560)
 
 TTCov is a coverage-driven pipeline for **selecting training data** so that
 the selected subset matches the concept distribution of a target (test)
